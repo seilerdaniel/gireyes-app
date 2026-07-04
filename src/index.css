@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  /* Sistema de diseño Método Esencia */
+  --color-ink: #2B2430;
+  --color-terracotta: #B5654A;
+  --color-plum: #6B4257;
+  --color-linen: #F3EDE4;
+  --color-sand: #E4D7C5;
+  --color-gold: #A98B4F;
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-linen);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
