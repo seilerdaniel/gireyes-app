@@ -58,5 +58,6 @@ export interface BlogPost {
   resumen: string
   contenido: string
   fecha: string
+  categoria?: string
   imagen_url?: string
 }

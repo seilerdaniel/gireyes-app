@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 @theme {
   /* Sistema de diseño Método Esencia — paleta violeta/lavanda refinada */

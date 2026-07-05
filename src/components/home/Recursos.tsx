@@ -59,7 +59,9 @@ export default function Recursos() {
               ]
           ).map((post) => (
             <div key={post.id} className="border-t border-ink/20 pt-4.5">
-              <span className="text-xs uppercase tracking-wide text-orquidea">Artículo</span>
+              <span className="text-xs uppercase tracking-wide text-orquidea font-semibold">
+                {post.categoria || 'Artículo'}
+              </span>
               <h4 className="font-display text-lg my-2.5">{post.titulo}</h4>
               <p className="text-sm text-ink/70 mb-3.5">{post.resumen}</p>
               <Link

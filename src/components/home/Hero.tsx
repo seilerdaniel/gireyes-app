@@ -29,11 +29,11 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      <div className="order-1 md:order-2 min-h-[340px] md:min-h-0">
+      <div className="order-1 md:order-2 min-h-[340px] md:min-h-0 px-6 pt-8 md:p-0">
         <img
           src={heroImage}
           alt="Giselle Reyes, Coach Profesional y Asesora de Imagen"
-          className="w-full h-full object-cover rounded-2xl"
+          className="w-full h-full object-cover rounded-2xl md:rounded-l-2xl md:rounded-r-none"
         />
       </div>
     </section>

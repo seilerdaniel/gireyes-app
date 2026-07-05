@@ -40,7 +40,7 @@ export default function Testimonios() {
 
         <div className="grid md:grid-cols-3 gap-7">
           {testimonios.map((t) => (
-            <div key={t.nombre} className="bg-linen p-8 border-t-[3px] border-gold">
+            <div key={t.nombre} className="bg-linen p-8 border-t-[3px] border-orquidea">
               <p className="text-sm italic text-ink/75 mb-6">{t.texto}</p>
               <div className="flex items-center gap-3.5">
                 <img
