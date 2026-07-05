@@ -16,7 +16,7 @@ export default function Servicios() {
               Acompañamiento personalizado para recuperar claridad emocional, soltar la
               culpa y tomar decisiones desde la autenticidad.
             </p>
-            <Link to="/tienda" className="text-orquidea font-semibold text-sm">
+            <Link to="/tienda/coaching-individual" className="text-orquidea font-semibold text-sm">
               Ver detalle →
             </Link>
           </div>
@@ -27,7 +27,7 @@ export default function Servicios() {
               Alineá tu imagen externa con tu identidad interna. Un proceso con enfoque
               emocional, no solo estético.
             </p>
-            <Link to="/tienda" className="text-orquidea font-semibold text-sm">
+            <Link to="/tienda/asesoria-imagen" className="text-orquidea font-semibold text-sm">
               Ver detalle →
             </Link>
           </div>
@@ -41,7 +41,7 @@ export default function Servicios() {
               Coaching + Asesoría de Imagen combinados en un proceso de 8 a 12 semanas.
               La transformación completa: por dentro y por fuera.
             </p>
-            <Link to="/tienda" className="text-gold font-semibold text-sm">
+            <Link to="/tienda/metodo-esencia" className="text-gold font-semibold text-sm">
               Ver detalle →
             </Link>
           </div>

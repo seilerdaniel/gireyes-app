@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { whatsappLink, whatsappMensajes } from '../../lib/whatsapp'
 
 const planes = [
   {
@@ -6,6 +6,7 @@ const planes = [
     precio: '$25.000 – $35.000',
     items: ['1 sesión de Coaching o Asesoría de Imagen', 'Modalidad online'],
     destacado: false,
+    whatsappMsg: whatsappMensajes.planSesionSuelta,
   },
   {
     nombre: 'Programa Integral',
@@ -13,12 +14,14 @@ const planes = [
     items: ['8 a 12 semanas', 'Coaching + Asesoría de Imagen', 'Seguimiento personalizado'],
     destacado: true,
     star: '★ Método Esencia',
+    whatsappMsg: whatsappMensajes.planMetodoEsencia,
   },
   {
     nombre: 'Pack mensual',
     precio: '$90.000 – $110.000',
     items: ['4 sesiones (Coaching o Imagen)', 'Modalidad online'],
     destacado: false,
+    whatsappMsg: whatsappMensajes.planPackMensual,
   },
 ]
 
@@ -56,8 +59,10 @@ export default function Precios() {
                   <li key={it}>{it}</li>
                 ))}
               </ul>
-              <Link
-                to="/#contacto"
+              <a
+                href={whatsappLink(p.whatsappMsg)}
+                target="_blank"
+                rel="noreferrer"
                 className={
                   p.destacado
                     ? 'bg-orquidea text-linen text-center px-6 py-3 rounded-xl font-semibold'
@@ -65,7 +70,7 @@ export default function Precios() {
                 }
               >
                 Agendar consulta
-              </Link>
+              </a>
             </div>
           ))}
         </div>

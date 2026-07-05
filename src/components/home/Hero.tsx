@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom'
 import heroImage from '../../assets/images/hero-image.jpg'
+import { whatsappLink, whatsappMensajes } from '../../lib/whatsapp'
 
 export default function Hero() {
   return (
@@ -18,12 +18,14 @@ export default function Hero() {
           Reconectá con tu esencia, por dentro y por fuera.
         </p>
         <div className="flex flex-wrap gap-4">
-          <Link
-            to="/#contacto"
+          <a
+            href={whatsappLink(whatsappMensajes.heroConsulta)}
+            target="_blank"
+            rel="noreferrer"
             className="bg-orquidea text-linen px-7 py-3.5 rounded-xl font-semibold hover:-translate-y-0.5 transition-transform"
           >
             Agendar consulta gratuita
-          </Link>
+          </a>
           <a
             href="#recursos"
             className="border border-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-ink hover:text-linen transition-colors"

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { whatsappLink, whatsappMensajes } from '../../lib/whatsapp'
 
 const servicios = [
   { titulo: 'Desarrollo de Liderazgo', texto: 'Fortalecé tu liderazgo desde la autenticidad, la comunicación asertiva y la inteligencia emocional.' },
@@ -34,12 +34,14 @@ export default function ServiciosB2B() {
         </div>
 
         <div className="text-center mt-10">
-          <Link
-            to="/#contacto"
+          <a
+            href={whatsappLink(whatsappMensajes.b2b)}
+            target="_blank"
+            rel="noreferrer"
             className="border border-linen px-7 py-3.5 rounded-xl font-semibold inline-block hover:bg-linen hover:text-ink transition-colors"
           >
             Consultanos por una propuesta a medida
-          </Link>
+          </a>
         </div>
       </div>
     </section>

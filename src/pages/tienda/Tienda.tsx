@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 import { useCartStore } from '../../store/cartStore'
+import ServiceModal from '../../components/ServiceModal'
 import type { Service } from '../../types'
 
 export default function Tienda() {
   const [services, setServices] = useState<Service[]>([])
+  const [selected, setSelected] = useState<Service | null>(null)
   const addItem = useCartStore((s) => s.addItem)
+  const navigate = useNavigate()
 
   useEffect(() => {
     async function fetchServices() {
@@ -16,28 +19,63 @@ export default function Tienda() {
     fetchServices()
   }, [])
 
+  function handleAddToCart(service: Service) {
+    addItem(service)
+    setSelected(null)
+  }
+
+  function handleBuyNow(service: Service) {
+    addItem(service)
+    setSelected(null)
+    navigate('/checkout')
+  }
+
   return (
     <section className="max-w-6xl mx-auto px-6 py-24">
-      <h1 className="font-display text-4xl mb-10">Tienda</h1>
+      <h1 className="font-display text-4xl mb-3">Tienda</h1>
+      <p className="text-ink/70 mb-10">
+        Elegí el servicio que necesitás y sumalo a tu carrito, o mirá el detalle completo
+        antes de decidir.
+      </p>
+
       <div className="grid md:grid-cols-3 gap-6">
         {services.map((service) => (
-          <div key={service.id} className="border border-ink/10 p-6">
-            <Link to={`/tienda/${service.slug}`}>
-              <h3 className="font-display text-xl mb-2">{service.nombre}</h3>
-            </Link>
-            <p className="text-sm text-ink/70 mb-4">{service.descripcion}</p>
+          <div key={service.id} className="border border-ink/10 p-6 flex flex-col">
+            <h3 className="font-display text-xl mb-2">{service.nombre}</h3>
+            <p className="text-sm text-ink/70 mb-4 flex-grow">{service.descripcion}</p>
             <p className="font-display text-plum mb-4">
               ${service.precio_ars} ARS / ${service.precio_usd} USD
             </p>
-            <button
-              onClick={() => addItem(service)}
-              className="bg-orquidea text-linen px-5 py-2 rounded-xl text-sm font-semibold"
-            >
-              Agregar al carrito
-            </button>
+            <div className="flex gap-2.5">
+              <button
+                onClick={() => setSelected(service)}
+                className="flex-1 border border-ink px-4 py-2.5 rounded-xl text-sm font-semibold hover:bg-ink hover:text-linen transition-colors"
+              >
+                Ver detalle
+              </button>
+              <button
+                onClick={() => addItem(service)}
+                className="flex-1 bg-orquidea text-linen px-4 py-2.5 rounded-xl text-sm font-semibold"
+              >
+                Agregar
+              </button>
+            </div>
           </div>
         ))}
       </div>
+
+      {services.length === 0 && (
+        <p className="text-ink/50 text-center py-16">
+          Todavía no hay servicios cargados. Volvé pronto.
+        </p>
+      )}
+
+      <ServiceModal
+        service={selected}
+        onClose={() => setSelected(null)}
+        onAddToCart={handleAddToCart}
+        onBuyNow={handleBuyNow}
+      />
     </section>
   )
 }

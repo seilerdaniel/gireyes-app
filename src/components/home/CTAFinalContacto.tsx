@@ -1,4 +1,11 @@
 import { useState } from 'react'
+import { FaWhatsapp, FaInstagram, FaTiktok } from 'react-icons/fa'
+import { whatsappLink, whatsappMensajes } from '../../lib/whatsapp'
+
+const SOCIAL = {
+  instagram: 'https://www.instagram.com/gireyesimagen',
+  tiktok: 'https://www.tiktok.com/@gireyesimagen',
+}
 
 export default function CTAFinalContacto() {
   const [form, setForm] = useState({ nombre: '', email: '', telefono: '', mensaje: '' })
@@ -9,11 +16,9 @@ export default function CTAFinalContacto() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
-    // TODO: guardar el lead en Supabase (tabla `leads` o similar) antes de redirigir
-    const texto = encodeURIComponent(
-      `Hola Giselle! Soy ${form.nombre}. ${form.mensaje}`
-    )
-    window.open(`https://wa.me/5491161948284?text=${texto}`, '_blank')
+    // TODO: guardar el lead en Supabase (tabla `leads`) antes de redirigir
+    const texto = `Hola Giselle! Soy ${form.nombre}. ${form.mensaje}`
+    window.open(whatsappLink(texto), '_blank')
   }
 
   return (
@@ -32,11 +37,12 @@ export default function CTAFinalContacto() {
               Agendar consulta gratuita
             </a>
             <a
-              href="https://wa.me/5491161948284"
+              href={whatsappLink(whatsappMensajes.consultaGratuita)}
               target="_blank"
               rel="noreferrer"
-              className="border border-linen px-7 py-3.5 rounded-xl font-semibold hover:bg-linen hover:text-ink transition-colors"
+              className="border border-linen px-7 py-3.5 rounded-xl font-semibold hover:bg-linen hover:text-ink transition-colors inline-flex items-center gap-2"
             >
+              <FaWhatsapp size={18} />
               Enviar mensaje por WhatsApp
             </a>
           </div>
@@ -107,19 +113,31 @@ export default function CTAFinalContacto() {
           <span className="font-display italic text-gold text-sm block mb-3">Conectemos</span>
           <div className="flex justify-center gap-5 my-5">
             <a
-              href="https://wa.me/5491161948284"
-              className="w-11 h-11 border border-linen/40 rounded-full flex items-center justify-center"
+              href={whatsappLink(whatsappMensajes.consultaGratuita)}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="WhatsApp"
+              className="w-11 h-11 border border-linen/40 rounded-full flex items-center justify-center hover:bg-linen hover:text-ink transition-colors"
             >
-              ✆
+              <FaWhatsapp size={19} />
             </a>
             <a
-              href="https://instagram.com/gireyesimagen"
-              className="w-11 h-11 border border-linen/40 rounded-full flex items-center justify-center"
+              href={SOCIAL.instagram}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+              className="w-11 h-11 border border-linen/40 rounded-full flex items-center justify-center hover:bg-linen hover:text-ink transition-colors"
             >
-              ◎
+              <FaInstagram size={19} />
             </a>
-            <a href="#" className="w-11 h-11 border border-linen/40 rounded-full flex items-center justify-center">
-              in
+            <a
+              href={SOCIAL.tiktok}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="TikTok"
+              className="w-11 h-11 border border-linen/40 rounded-full flex items-center justify-center hover:bg-linen hover:text-ink transition-colors"
+            >
+              <FaTiktok size={17} />
             </a>
           </div>
           <p className="text-sm">gireyesimagen@gmail.com</p>
