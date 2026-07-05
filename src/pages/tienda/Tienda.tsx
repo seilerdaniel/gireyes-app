@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { supabase } from '../../lib/supabase'
 import { useCartStore } from '../../store/cartStore'
 import ServiceModal from '../../components/ServiceModal'
@@ -10,6 +10,7 @@ export default function Tienda() {
   const [selected, setSelected] = useState<Service | null>(null)
   const addItem = useCartStore((s) => s.addItem)
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
 
   useEffect(() => {
     async function fetchServices() {
@@ -19,14 +20,32 @@ export default function Tienda() {
     fetchServices()
   }, [])
 
+  // Si llegamos con ?servicio=slug (desde la Home o un link compartido),
+  // abrimos el modal de ese servicio automáticamente.
+  useEffect(() => {
+    const slug = searchParams.get('servicio')
+    if (slug && services.length > 0) {
+      const match = services.find((s) => s.slug === slug)
+      if (match) setSelected(match)
+    }
+  }, [searchParams, services])
+
+  function handleCloseModal() {
+    setSelected(null)
+    if (searchParams.get('servicio')) {
+      searchParams.delete('servicio')
+      setSearchParams(searchParams, { replace: true })
+    }
+  }
+
   function handleAddToCart(service: Service) {
     addItem(service)
-    setSelected(null)
+    handleCloseModal()
   }
 
   function handleBuyNow(service: Service) {
     addItem(service)
-    setSelected(null)
+    handleCloseModal()
     navigate('/checkout')
   }
 
@@ -72,7 +91,7 @@ export default function Tienda() {
 
       <ServiceModal
         service={selected}
-        onClose={() => setSelected(null)}
+        onClose={handleCloseModal}
         onAddToCart={handleAddToCart}
         onBuyNow={handleBuyNow}
       />

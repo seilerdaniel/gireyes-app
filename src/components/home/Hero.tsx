@@ -1,5 +1,5 @@
 import heroImage from '../../assets/images/hero-image.jpg'
-import { whatsappLink, whatsappMensajes } from '../../lib/whatsapp'
+import CalendlyButton from '../CalendlyButton'
 
 export default function Hero() {
   return (
@@ -18,14 +18,9 @@ export default function Hero() {
           Reconectá con tu esencia, por dentro y por fuera.
         </p>
         <div className="flex flex-wrap gap-4">
-          <a
-            href={whatsappLink(whatsappMensajes.heroConsulta)}
-            target="_blank"
-            rel="noreferrer"
-            className="bg-orquidea text-linen px-7 py-3.5 rounded-xl font-semibold hover:-translate-y-0.5 transition-transform"
-          >
+          <CalendlyButton className="bg-orquidea text-linen px-7 py-3.5 rounded-xl font-semibold hover:-translate-y-0.5 transition-transform">
             Agendar consulta gratuita
-          </a>
+          </CalendlyButton>
           <a
             href="#recursos"
             className="border border-ink px-7 py-3.5 rounded-xl font-semibold hover:bg-ink hover:text-linen transition-colors"
