@@ -5,7 +5,7 @@ export default function Servicios() {
     <section id="servicios" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-xl mb-14">
-          <span className="font-display italic text-terracotta text-sm block mb-3">Servicios</span>
+          <span className="font-display italic text-orquidea text-sm block mb-3">Servicios</span>
           <h2 className="font-display text-3xl md:text-4xl">Elegí el camino que necesitás hoy</h2>
         </div>
 
@@ -16,7 +16,7 @@ export default function Servicios() {
               Acompañamiento personalizado para recuperar claridad emocional, soltar la
               culpa y tomar decisiones desde la autenticidad.
             </p>
-            <Link to="/tienda" className="text-terracotta font-semibold text-sm">
+            <Link to="/tienda" className="text-orquidea font-semibold text-sm">
               Ver detalle →
             </Link>
           </div>
@@ -27,13 +27,13 @@ export default function Servicios() {
               Alineá tu imagen externa con tu identidad interna. Un proceso con enfoque
               emocional, no solo estético.
             </p>
-            <Link to="/tienda" className="text-terracotta font-semibold text-sm">
+            <Link to="/tienda" className="text-orquidea font-semibold text-sm">
               Ver detalle →
             </Link>
           </div>
 
           <div className="bg-ink text-linen p-9 relative">
-            <span className="absolute -top-3 left-7 bg-terracotta text-linen text-xs uppercase tracking-wide px-3 py-1">
+            <span className="absolute -top-3 left-7 bg-orquidea text-linen text-xs uppercase tracking-wide px-3 py-1 rounded-full">
               Recomendado
             </span>
             <h3 className="font-display text-xl mb-3">Programa Integral</h3>

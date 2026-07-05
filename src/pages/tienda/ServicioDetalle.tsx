@@ -32,7 +32,7 @@ export default function ServicioDetalle() {
       </p>
       <button
         onClick={() => addItem(service)}
-        className="bg-terracotta text-linen px-6 py-3 font-semibold"
+        className="bg-orquidea text-linen px-6 py-3 rounded-xl font-semibold"
       >
         Agregar al carrito
       </button>

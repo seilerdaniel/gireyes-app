@@ -31,7 +31,7 @@ export default function Tienda() {
             </p>
             <button
               onClick={() => addItem(service)}
-              className="bg-terracotta text-linen px-5 py-2 text-sm font-semibold"
+              className="bg-orquidea text-linen px-5 py-2 rounded-xl text-sm font-semibold"
             >
               Agregar al carrito
             </button>

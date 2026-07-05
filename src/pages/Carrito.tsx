@@ -8,7 +8,7 @@ export default function Carrito() {
     return (
       <section className="max-w-3xl mx-auto px-6 py-24 text-center">
         <h1 className="font-display text-3xl mb-4">Tu carrito está vacío</h1>
-        <Link to="/tienda" className="text-terracotta font-semibold">
+        <Link to="/tienda" className="text-orquidea font-semibold">
           Ver servicios →
         </Link>
       </section>
@@ -31,9 +31,9 @@ export default function Carrito() {
                 min={1}
                 value={item.cantidad}
                 onChange={(e) => updateQuantity(item.service.id, Number(e.target.value))}
-                className="w-14 border border-ink/20 text-center py-1"
+                className="w-14 border border-ink/20 rounded-lg text-center py-1"
               />
-              <button onClick={() => removeItem(item.service.id)} className="text-terracotta text-sm">
+              <button onClick={() => removeItem(item.service.id)} className="text-orquidea text-sm">
                 Quitar
               </button>
             </div>
@@ -41,7 +41,7 @@ export default function Carrito() {
         ))}
       </div>
       <p className="font-display text-xl mb-6">Total: ${total('ars')} ARS</p>
-      <Link to="/checkout" className="bg-terracotta text-linen px-6 py-3 font-semibold inline-block">
+      <Link to="/checkout" className="bg-orquidea text-linen px-6 py-3 rounded-xl font-semibold inline-block">
         Ir a pagar
       </Link>
     </section>

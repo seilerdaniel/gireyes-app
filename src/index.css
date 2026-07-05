@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  /* Sistema de diseño Método Esencia */
-  --color-ink: #2B2430;
-  --color-terracotta: #B5654A;
-  --color-plum: #6B4257;
-  --color-linen: #F3EDE4;
-  --color-sand: #E4D7C5;
-  --color-gold: #A98B4F;
+  /* Sistema de diseño Método Esencia — paleta violeta/lavanda refinada */
+  --color-ink: #2A2438;       /* texto principal, casi negro con base violeta */
+  --color-orquidea: #8B6BA8;  /* acento principal: violeta refinado (antes terracota) */
+  --color-plum: #5C3A6E;      /* segundo acento, violeta profundo */
+  --color-linen: #F8F4FB;     /* fondo principal, blanco con tibieza lavanda */
+  --color-malva: #E8DEF0;     /* fondo secundario, lila suave (antes arena) */
+  --color-gold: #A98B4F;      /* detalle fino: dorado envejecido, contraste cálido */
 
   --font-display: "Fraunces", serif;
   --font-body: "Inter", sans-serif;

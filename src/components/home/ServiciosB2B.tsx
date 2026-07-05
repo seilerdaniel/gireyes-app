@@ -36,7 +36,7 @@ export default function ServiciosB2B() {
         <div className="text-center mt-10">
           <Link
             to="/#contacto"
-            className="border border-linen px-7 py-3.5 font-semibold inline-block hover:bg-linen hover:text-ink transition-colors"
+            className="border border-linen px-7 py-3.5 rounded-xl font-semibold inline-block hover:bg-linen hover:text-ink transition-colors"
           >
             Consultanos por una propuesta a medida
           </Link>

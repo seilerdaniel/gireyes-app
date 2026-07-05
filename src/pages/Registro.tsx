@@ -29,16 +29,16 @@ export default function Registro() {
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className="w-full border border-ink/20 px-4 py-3"
+          className="w-full border border-ink/20 rounded-xl px-4 py-3"
         />
         <input
           type="password"
           placeholder="Contraseña"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="w-full border border-ink/20 px-4 py-3"
+          className="w-full border border-ink/20 rounded-xl px-4 py-3"
         />
-        <button className="bg-terracotta text-linen px-6 py-3 font-semibold w-full">
+        <button className="bg-orquidea text-linen px-6 py-3 rounded-xl font-semibold w-full">
           Crear cuenta
         </button>
       </form>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet, useLocation } from 'react-router-dom'
 import { useCartStore } from '../store/cartStore'
+import logo from '../assets/images/logo.jpg'
 
 const navLinks = [
   { to: '/#sobre-mi', label: 'Sobre mí' },
@@ -20,8 +21,11 @@ export default function Layout() {
     <div className="min-h-screen flex flex-col bg-linen text-ink">
       <header className="sticky top-0 z-50 bg-linen/90 backdrop-blur border-b border-ink/10">
         <nav className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <Link to="/" className="font-display text-xl" onClick={() => setMenuOpen(false)}>
-            GR <span className="italic text-terracotta">Método Esencia</span>
+          <Link to="/" className="flex items-center gap-2.5" onClick={() => setMenuOpen(false)}>
+            <img src={logo} alt="Gi Reyes — Imagen & Coach" className="h-10 w-auto rounded-lg" />
+            <span className="hidden sm:inline font-display italic text-orquidea text-sm">
+              Método Esencia
+            </span>
           </Link>
 
           <ul className="hidden md:flex gap-7 text-sm">

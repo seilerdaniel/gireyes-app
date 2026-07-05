@@ -52,7 +52,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
       >
         {q}
         <span
-          className={`text-terracotta text-xl flex-shrink-0 transition-transform ${
+          className={`text-orquidea text-xl flex-shrink-0 transition-transform ${
             isOpen ? 'rotate-45' : ''
           }`}
         >
@@ -72,10 +72,10 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function FAQ() {
   return (
-    <section className="bg-sand py-24">
+    <section className="bg-malva py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-xl mb-14">
-          <span className="font-display italic text-terracotta text-sm block mb-3">
+          <span className="font-display italic text-orquidea text-sm block mb-3">
             Preguntas frecuentes
           </span>
           <h2 className="font-display text-3xl md:text-4xl">

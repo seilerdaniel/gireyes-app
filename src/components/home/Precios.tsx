@@ -24,10 +24,10 @@ const planes = [
 
 export default function Precios() {
   return (
-    <section id="precios" className="bg-sand py-24">
+    <section id="precios" className="bg-malva py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-xl mx-auto text-center mb-14">
-          <span className="font-display italic text-terracotta text-sm block mb-3">Inversión</span>
+          <span className="font-display italic text-orquidea text-sm block mb-3">Inversión</span>
           <h2 className="font-display text-3xl md:text-4xl mb-3">Invertí en vos</h2>
           <p className="text-ink/70">
             Precios de referencia — consultanos por planes y formas de pago.
@@ -40,12 +40,12 @@ export default function Precios() {
               key={p.nombre}
               className={`p-9 flex flex-col bg-linen ${
                 p.destacado
-                  ? 'border-2 border-terracotta md:scale-105 shadow-xl order-first md:order-none'
+                  ? 'border-2 border-orquidea md:scale-105 shadow-xl order-first md:order-none'
                   : 'border border-ink/15'
               }`}
             >
               {p.star && (
-                <span className="text-terracotta text-xs uppercase tracking-wide font-semibold mb-2">
+                <span className="text-orquidea text-xs uppercase tracking-wide font-semibold mb-2">
                   {p.star}
                 </span>
               )}
@@ -60,8 +60,8 @@ export default function Precios() {
                 to="/#contacto"
                 className={
                   p.destacado
-                    ? 'bg-terracotta text-linen text-center px-6 py-3 font-semibold'
-                    : 'border border-ink text-center px-6 py-3 font-semibold'
+                    ? 'bg-orquidea text-linen text-center px-6 py-3 rounded-xl font-semibold'
+                    : 'border border-ink text-center px-6 py-3 rounded-xl font-semibold'
                 }
               >
                 Agendar consulta

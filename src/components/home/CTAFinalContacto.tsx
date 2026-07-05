@@ -28,21 +28,21 @@ export default function CTAFinalContacto() {
           </h2>
           <p className="text-linen/75 mb-9">Este es tu momento. Este es tu espacio.</p>
           <div className="flex flex-wrap gap-4 justify-center">
-            <a href="#contacto-form" className="bg-terracotta text-linen px-7 py-3.5 font-semibold">
+            <a href="#contacto-form" className="bg-orquidea text-linen px-7 py-3.5 rounded-xl font-semibold">
               Agendar consulta gratuita
             </a>
             <a
               href="https://wa.me/5491161948284"
               target="_blank"
               rel="noreferrer"
-              className="border border-linen px-7 py-3.5 font-semibold hover:bg-linen hover:text-ink transition-colors"
+              className="border border-linen px-7 py-3.5 rounded-xl font-semibold hover:bg-linen hover:text-ink transition-colors"
             >
               Enviar mensaje por WhatsApp
             </a>
           </div>
         </div>
 
-        <div id="contacto-form" className="max-w-xl mx-auto bg-linen text-ink p-9">
+        <div id="contacto-form" className="max-w-xl mx-auto bg-linen text-ink p-9 rounded-2xl">
           <h3 className="font-display text-xl mb-1.5">Hablemos de tu proceso</h3>
           <p className="text-sm text-ink/60 mb-6">
             Dejanos tus datos y te contactamos para agendar tu primera sesión.
@@ -56,7 +56,7 @@ export default function CTAFinalContacto() {
                 value={form.nombre}
                 onChange={handleChange}
                 placeholder="Tu nombre"
-                className="w-full border border-ink/25 px-3.5 py-3"
+                className="w-full border border-ink/25 rounded-xl px-3.5 py-3"
               />
             </div>
             <div className="grid sm:grid-cols-2 gap-4">
@@ -69,7 +69,7 @@ export default function CTAFinalContacto() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="tu@email.com"
-                  className="w-full border border-ink/25 px-3.5 py-3"
+                  className="w-full border border-ink/25 rounded-xl px-3.5 py-3"
                 />
               </div>
               <div>
@@ -79,7 +79,7 @@ export default function CTAFinalContacto() {
                   value={form.telefono}
                   onChange={handleChange}
                   placeholder="+54 9 11 ..."
-                  className="w-full border border-ink/25 px-3.5 py-3"
+                  className="w-full border border-ink/25 rounded-xl px-3.5 py-3"
                 />
               </div>
             </div>
@@ -91,10 +91,10 @@ export default function CTAFinalContacto() {
                 value={form.mensaje}
                 onChange={handleChange}
                 placeholder="¿Qué te gustaría trabajar? ¿Coaching, asesoría de imagen, o ambos?"
-                className="w-full border border-ink/25 px-3.5 py-3 min-h-[100px]"
+                className="w-full border border-ink/25 rounded-xl px-3.5 py-3 min-h-[100px]"
               />
             </div>
-            <button className="bg-terracotta text-linen w-full py-3.5 font-semibold">
+            <button className="bg-orquidea text-linen w-full py-3.5 rounded-xl font-semibold">
               Enviar y continuar por WhatsApp
             </button>
           </form>

@@ -18,13 +18,13 @@ export default function Checkout() {
         <div className="flex gap-4">
           <button
             onClick={() => setMetodo('mercadopago')}
-            className={`px-5 py-2 border ${metodo === 'mercadopago' ? 'bg-ink text-linen' : 'border-ink/20'}`}
+            className={`px-5 py-2 rounded-xl border ${metodo === 'mercadopago' ? 'bg-ink text-linen' : 'border-ink/20'}`}
           >
             Mercado Pago (ARS)
           </button>
           <button
             onClick={() => setMetodo('stripe')}
-            className={`px-5 py-2 border ${metodo === 'stripe' ? 'bg-ink text-linen' : 'border-ink/20'}`}
+            className={`px-5 py-2 rounded-xl border ${metodo === 'stripe' ? 'bg-ink text-linen' : 'border-ink/20'}`}
           >
             Stripe (USD)
           </button>
@@ -35,7 +35,7 @@ export default function Checkout() {
         Total: ${metodo === 'mercadopago' ? total('ars') + ' ARS' : total('usd') + ' USD'}
       </p>
 
-      <button className="bg-terracotta text-linen px-6 py-3 font-semibold w-full">
+      <button className="bg-orquidea text-linen px-6 py-3 rounded-xl font-semibold w-full">
         Confirmar y pagar ({items.length} {items.length === 1 ? 'item' : 'items'})
       </button>
     </section>

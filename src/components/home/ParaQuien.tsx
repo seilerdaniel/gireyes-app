@@ -11,7 +11,7 @@ export default function ParaQuien() {
     <section className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="max-w-xl mb-14">
-          <span className="font-display italic text-terracotta text-sm block mb-3">
+          <span className="font-display italic text-orquidea text-sm block mb-3">
             Para quién es esto
           </span>
           <h2 className="font-display text-3xl md:text-4xl">¿Te identificás con esto?</h2>
@@ -22,7 +22,7 @@ export default function ParaQuien() {
               key={i}
               className="flex gap-4 items-baseline py-6 border-b border-ink/10 font-display text-xl"
             >
-              <span className="text-terracotta italic text-base w-6 flex-shrink-0">—</span>
+              <span className="text-orquidea italic text-base w-6 flex-shrink-0">—</span>
               {text}
             </div>
           ))}
