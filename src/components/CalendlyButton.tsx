@@ -1,5 +1,10 @@
-import { useState, type ReactNode } from 'react'
-import { PopupModal } from 'react-calendly'
+import { useState, lazy, Suspense, type ReactNode } from 'react'
+
+// react-calendly solo se descarga cuando el usuario efectivamente hace
+// click en "Agendar" — no forma parte del bundle inicial del Home.
+const PopupModal = lazy(() =>
+  import('react-calendly').then((mod) => ({ default: mod.PopupModal }))
+)
 
 const CALENDLY_URL = 'https://calendly.com/gireyesimagen'
 
@@ -28,12 +33,14 @@ export default function CalendlyButton({ className, children }: CalendlyButtonPr
         {children}
       </button>
       {open && (
-        <PopupModal
-          url={CALENDLY_URL}
-          onModalClose={() => setOpen(false)}
-          open={open}
-          rootElement={document.getElementById('root') as HTMLElement}
-        />
+        <Suspense fallback={null}>
+          <PopupModal
+            url={CALENDLY_URL}
+            onModalClose={() => setOpen(false)}
+            open={open}
+            rootElement={document.getElementById('root') as HTMLElement}
+          />
+        </Suspense>
       )}
     </>
   )
