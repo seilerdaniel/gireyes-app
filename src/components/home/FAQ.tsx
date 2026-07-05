@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 const faqs = [
   {
@@ -39,9 +39,38 @@ const faqs = [
   },
 ]
 
-export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null)
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [isOpen, setIsOpen] = useState(false)
+  const contentRef = useRef<HTMLDivElement>(null)
 
+  return (
+    <div className="border-b border-ink/15">
+      <button
+        onClick={() => setIsOpen((v) => !v)}
+        aria-expanded={isOpen}
+        className="w-full text-left py-5.5 flex justify-between items-center gap-4 font-display text-lg"
+      >
+        {q}
+        <span
+          className={`text-terracotta text-xl flex-shrink-0 transition-transform ${
+            isOpen ? 'rotate-45' : ''
+          }`}
+        >
+          +
+        </span>
+      </button>
+      <div
+        ref={contentRef}
+        className="overflow-hidden transition-all duration-300"
+        style={{ maxHeight: isOpen ? `${contentRef.current?.scrollHeight ?? 500}px` : '0px' }}
+      >
+        <p className="pb-5.5 text-sm text-ink/70 max-w-xl">{a}</p>
+      </div>
+    </div>
+  )
+}
+
+export default function FAQ() {
   return (
     <section className="bg-sand py-24">
       <div className="max-w-6xl mx-auto px-6">
@@ -55,32 +84,9 @@ export default function FAQ() {
         </div>
 
         <div className="max-w-3xl">
-          {faqs.map((item, i) => {
-            const isOpen = openIndex === i
-            return (
-              <div key={item.q} className="border-b border-ink/15">
-                <button
-                  onClick={() => setOpenIndex(isOpen ? null : i)}
-                  className="w-full text-left py-5.5 flex justify-between items-center gap-4 font-display text-lg"
-                >
-                  {item.q}
-                  <span
-                    className={`text-terracotta text-xl flex-shrink-0 transition-transform ${
-                      isOpen ? 'rotate-45' : ''
-                    }`}
-                  >
-                    +
-                  </span>
-                </button>
-                <div
-                  className="overflow-hidden transition-all"
-                  style={{ maxHeight: isOpen ? '240px' : '0px' }}
-                >
-                  <p className="pb-5.5 text-sm text-ink/70 max-w-xl">{item.a}</p>
-                </div>
-              </div>
-            )
-          })}
+          {faqs.map((item) => (
+            <FaqItem key={item.q} q={item.q} a={item.a} />
+          ))}
         </div>
       </div>
     </section>

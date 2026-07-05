@@ -27,7 +27,7 @@ export default function MetodoEsencia() {
           />
           {steps.map((s) => (
             <div key={s.num} className="relative z-10">
-              <div className="w-17 h-17 w-[68px] h-[68px] rounded-full bg-linen border border-gold flex items-center justify-center font-display text-terracotta mb-5">
+              <div className="w-[68px] h-[68px] rounded-full bg-linen border border-gold flex items-center justify-center font-display text-terracotta mb-5">
                 {s.num}
               </div>
               <h3 className="font-display text-xl mb-2">{s.title}</h3>

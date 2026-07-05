@@ -20,6 +20,27 @@ const testimonios = [
     nombre: 'Carolina Ortiz',
     rol: 'Marketer y Cantautora · @caroortiz_musica',
   },
+  {
+    texto:
+      '"Me ayudó mucho a trabajar con mi imagen, me ayudó a conocerme, a conectar conmigo. Te acompaña de una manera cálida y empática en todo el proceso. Para mí fue un antes y un después."',
+    iniciales: 'CO',
+    nombre: 'Carolina Ortiz',
+    rol: 'Marketer y Cantautora · @caroortiz_musica',
+  },
+  {
+    texto:
+      '"Me ayudó mucho a trabajar con mi imagen, me ayudó a conocerme, a conectar conmigo. Te acompaña de una manera cálida y empática en todo el proceso. Para mí fue un antes y un después."',
+    iniciales: 'CO',
+    nombre: 'Carolina Ortiz',
+    rol: 'Marketer y Cantautora · @caroortiz_musica',
+  },
+  {
+    texto:
+      '"Me ayudó mucho a trabajar con mi imagen, me ayudó a conocerme, a conectar conmigo. Te acompaña de una manera cálida y empática en todo el proceso. Para mí fue un antes y un después."',
+    iniciales: 'CO',
+    nombre: 'Carolina Ortiz',
+    rol: 'Marketer y Cantautora · @caroortiz_musica',
+  },
 ]
 
 export default function Testimonios() {
